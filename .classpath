@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Aayush/Documents/NEU Notes/PSA/Final Project/INFO6205_Final_Project/jars/nio.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
