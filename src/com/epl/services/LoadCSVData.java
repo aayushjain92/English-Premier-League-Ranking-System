@@ -36,44 +36,32 @@ public class LoadCSVData {
 				int away_goal = Integer.parseInt(line_content[5]);
 				int goalDiff = home_goal-away_goal;
 				
-				// remove match from the remaining matches
-				league.getRemainingMatches().get(home_team).remove(away_team);
-				
-				
-				// add match to matchPlayed in the league instance
-				Map<String, List> awayMap =  league.getMatchesPlayed().get(home_team);
-				List<Integer> gd;
-				if(awayMap == null) {
-					Map<String, List> map = new HashMap<>();
-					gd = new ArrayList<Integer>();
-					gd.add(goalDiff);
-					map.put(away_team, gd);
-					league.getMatchesPlayed().put(home_team, map);
-				}else {
-					gd = awayMap.get(away_team);
-					if(gd == null) {
+				if(league.getTeamDirectory().get(home_team)!= null && league.getTeamDirectory().get(away_team)!= null) {
+					// remove match from the remaining matches
+					league.getRemainingMatches().get(home_team).remove(away_team);
+					
+					
+					// add match to matchPlayed in the league instance
+					Map<String, List> awayMap =  league.getMatchesPlayed().get(home_team);
+					List<Integer> gd;
+					if(awayMap == null) {
+						Map<String, List> map = new HashMap<>();
 						gd = new ArrayList<Integer>();
 						gd.add(goalDiff);
-						league.getMatchesPlayed().get(home_team).put(away_team, gd);
+						map.put(away_team, gd);
+						league.getMatchesPlayed().put(home_team, map);
 					}else {
-						gd.add(goalDiff);
+						gd = awayMap.get(away_team);
+						if(gd == null) {
+							gd = new ArrayList<Integer>();
+							gd.add(goalDiff);
+							league.getMatchesPlayed().get(home_team).put(away_team, gd);
+						}else {
+							gd.add(goalDiff);
+						}
 					}
 				}
-						
-				
-//				List<Integer> list; 
-//				try {
-//					list = league.getMatchesPlayed().get(home_team).get(away_team);
-//				}catch(Exception e) {
-//					list = new ArrayList<>();
-//				}
-				
-							
-//				Map<String, List> map = new HashMap<>();
-//				map.put(away_team, list);
-//				league.getMatchesPlayed().put(home_team, map);
-				
-								
+														
 				line = br.readLine();
 			}
 			
@@ -101,11 +89,31 @@ public class LoadCSVData {
 				int away_goal = Integer.parseInt(line_content[5]);
 				int goalDiff = home_goal-away_goal;
 				
-				try {
-					league.getRemainingMatches().get(home_team).get(away_team).add(goalDiff);
-				}catch(Exception e) {
-					//System.out.println("inside catch");
+				if(league.getTeamDirectory().get(home_team)!= null && league.getTeamDirectory().get(away_team)!= null) {
+					// add match to matchPlayed in the league instance
+					Map<String, List> awayMap =  league.getRemainingMatches().get(home_team);
+					List<Integer> gd;
+					if(awayMap == null) {
+						Map<String, List> map = new HashMap<>();
+						gd = new ArrayList<Integer>();
+						gd.add(goalDiff);
+						map.put(away_team, gd);
+						league.getRemainingMatches().put(home_team, map);
+					}else {
+						gd = awayMap.get(away_team);
+						if(gd == null) {
+							gd = new ArrayList<Integer>();
+							gd.add(goalDiff);
+							league.getRemainingMatches().get(home_team).put(away_team, gd);
+						}else {
+							gd.add(goalDiff);
+						}
+					}
 				}
+				
+				
+				
+			
 												
 				line = br.readLine();
 			}

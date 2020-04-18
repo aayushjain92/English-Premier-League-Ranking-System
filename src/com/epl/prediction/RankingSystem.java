@@ -45,16 +45,6 @@ public class RankingSystem {
 
 	}
 
-//	private static void printRankingPrediction(League league2019_20) {
-//		// TODO Auto-generated method stub
-//		System.out.println("\n\n\n\n\n================== RANKING PREDICTION ==================\n");
-//		System.out.format("%20s%10s\n", "CLUB", "SCORE");
-//		System.out.println("--------------------------------------------");
-//		for (String s : league2019_20.getTeamDirectory().keySet()) {
-//			Team team = league2019_20.getTeamDirectory().get(s);
-//			System.out.format("%20s%10d\n", team.getName(), team.getScore());
-//		}
-//	}
 	
 	private static void printRankingPrediction(List<Team> teamDirectory) {
 		// TODO Auto-generated method stub
@@ -79,7 +69,7 @@ public class RankingSystem {
 			Map<String, List> rivals = league2019_20.getRemainingMatches().get(homeTeam);
 			for (String awayTeam : rivals.keySet()) {
 				List<Integer> list = rivals.get(awayTeam);
-				System.out.format("%20s%20s%80s\n", homeTeam, awayTeam, list);
+				System.out.format("%20s%20s%100s\n", homeTeam, awayTeam, list);
 			}
 		}
 
