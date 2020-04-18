@@ -11,9 +11,9 @@ public class League {
 
 	private Map<String, Team> teamDirectory;
 	
-	private Map<String, Map<String, List<Integer>>> matchesPlayed;
+	private Map<String, Map<String, List>> matchesPlayed;
 	
-	private Map<String, Map<String, List<Integer>>> remainingMatches;
+	private Map<String, Map<String, List>> remainingMatches;
 	
 	//initialize league
 	public League(){
@@ -47,7 +47,7 @@ public class League {
 		
 		List<Integer> list = new ArrayList<>();
 		for(String team1: TEAMS1) {
-			Map<String, List<Integer>> map = new HashMap<>();
+			Map<String, List> map = new HashMap<>();
 			for(String team2: TEAMS2) {
 				if(!team1.equals(team2)) {
 					map.put(team2, list);
@@ -83,12 +83,12 @@ public class League {
 
 
 
-	public Map<String, Map<String, List<Integer>>> getMatchesPlayed() {
+	public Map<String, Map<String, List>> getMatchesPlayed() {
 		return matchesPlayed;
 	}
 
 
-	public Map<String, Map<String, List<Integer>>> getRemainingMatches() {
+	public Map<String, Map<String, List>> getRemainingMatches() {
 		return remainingMatches;
 	}
 

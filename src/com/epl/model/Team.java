@@ -5,9 +5,9 @@ import java.util.Map;
 
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
-public class Team {
+public class Team implements Comparable<Team> {
 	//home team
-	private String homeTeam;
+	private String name;
 	
 	private int score;
 	
@@ -16,12 +16,12 @@ public class Team {
 
 	public Team(String homeTeam){
 		score = 0;
-		this.homeTeam = homeTeam;
+		this.name = homeTeam;
 		matches = new HashMap<>();
 	}
 
-	public String getHomeTeam() {
-		return homeTeam;
+	public String getName() {
+		return name;
 	}
 
 	public int getScore() {
@@ -32,8 +32,16 @@ public class Team {
 		return matches;
 	}
 
+	public void setScore(int score) {
+		this.score = score;
+	}
+
 	
-	
+	// override equals and hashCode
+    @Override
+    public int compareTo(Team team) {
+        return (int)(team.getScore() - this.getScore());
+    }
 	
 	
 }
