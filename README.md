@@ -1,14 +1,9 @@
 # Ranking System
 
-A ranking system to predict the outcomes of the abandoned matches of English Premiere League due to coronavirus 
+A ranking system to predict outcomes of the abandoned matches of English Premiere League due to COVID-19 
 
 
-**Team Members**
-
-Aayush Jain, 001401616 
-
-
-**Technologies used**
+## Technologies used
 
 Java
 
