@@ -2,7 +2,7 @@
 
 **Problem Statement**
 
-The purpose of this project is to develop a ranking system to predict the outcomes of the abandoned matches due to coronavirus of English Premiere League 
+The purpose of this project is to develop a ranking system to predict the outcomes of the abandoned matches of English Premiere League due to coronavirus 
 
 **Team Members**
 
