@@ -1,6 +1,6 @@
 # Ranking System
 
-A ranking system to predict outcomes of the abandoned matches of English Premiere League due to COVID-19 
+A ranking system to predict outcomes of the postponed matches of English Premiere League due to COVID-19 
 
 
 ## Technologies used
